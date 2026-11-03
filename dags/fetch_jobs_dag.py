@@ -39,9 +39,15 @@ def fetch_jobs_daily():
 
         run()
 
+    @task
+    def export_data():
+        from src.export_data import run
+
+        run()
+
     fetched = fetch_and_save()
     cleaned = clean()
-    fetched >> cleaned >> extract_skills() >> ai_enrich()
+    fetched >> cleaned >> extract_skills() >> ai_enrich() >> export_data()
 
 
 fetch_jobs_daily()
