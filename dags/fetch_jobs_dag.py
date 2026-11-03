@@ -33,8 +33,15 @@ def fetch_jobs_daily():
 
         run()
 
+    @task
+    def ai_enrich():
+        from src.ai_enrich import run
+
+        run()
+
     fetched = fetch_and_save()
     cleaned = clean()
-    fetched >> cleaned >> extract_skills()
-    
+    fetched >> cleaned >> extract_skills() >> ai_enrich()
+
+
 fetch_jobs_daily()
