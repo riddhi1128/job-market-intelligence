@@ -61,7 +61,7 @@ def load_arbeitnow(path):
     return rows
 
 
-if __name__ == "__main__":
+def run():
     rows = []
     for p in glob.glob("data/raw/remotive_*.json"):
         rows += load_remotive(p)
@@ -79,3 +79,7 @@ if __name__ == "__main__":
     df.to_sql("jobs", con, if_exists="replace", index=False)
     con.close()
     print("Saved to data/jobs.db (table: jobs)")
+
+
+if __name__ == "__main__":
+    run()

@@ -21,7 +21,20 @@ def fetch_jobs_daily():
         save_raw("remotive", fetch_remotive())
         save_raw("arbeitnow", fetch_arbeitnow())
 
-    fetch_and_save()
+    @task
+    def clean():
+        from src.clean_jobs import run
 
+        run()
 
+    @task
+    def extract_skills():
+        from src.extract_skills import run
+
+        run()
+
+    fetched = fetch_and_save()
+    cleaned = clean()
+    fetched >> cleaned >> extract_skills()
+    
 fetch_jobs_daily()
