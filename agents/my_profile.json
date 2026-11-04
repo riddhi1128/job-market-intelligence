@@ -1,0 +1,23 @@
+{
+    "target_roles": [
+        "Data Analyst",
+        "Junior Data Scientist",
+        "BI Analyst"
+    ],
+    "skills": [
+        "python",
+        "sql",
+        "tableau",
+        "power bi",
+        "pandas",
+        "numpy",
+        "machine learning",
+        "deep learning",
+        "nlp",
+        "llm",
+        "tensorflow",
+        "pytorch",
+        "docker",
+        "git"
+    ]
+}
