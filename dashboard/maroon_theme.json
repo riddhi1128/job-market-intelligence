@@ -1,0 +1,68 @@
+{
+    "name": "Maroon Minimal",
+    "dataColors": [
+        "#7A1F3D",
+        "#B5546B",
+        "#4A0E1F",
+        "#C9A0A8",
+        "#8A7F80",
+        "#D9C2C6",
+        "#5C5456",
+        "#E8CDD3"
+    ],
+    "background": "#FFFFFF",
+    "foreground": "#2B2124",
+    "tableAccent": "#7A1F3D",
+    "visualStyles": {
+        "page": {
+            "*": {
+                "background": [
+                    {
+                        "color": {
+                            "solid": {
+                                "color": "#FAF6F4"
+                            }
+                        },
+                        "transparency": 0
+                    }
+                ]
+            }
+        },
+        "*": {
+            "*": {
+                "title": [
+                    {
+                        "fontFamily": "Segoe UI Semibold",
+                        "fontSize": 14,
+                        "fontColor": {
+                            "solid": {
+                                "color": "#4A0E1F"
+                            }
+                        }
+                    }
+                ],
+                "background": [
+                    {
+                        "color": {
+                            "solid": {
+                                "color": "#FFFFFF"
+                            }
+                        },
+                        "transparency": 0
+                    }
+                ],
+                "border": [
+                    {
+                        "show": true,
+                        "color": {
+                            "solid": {
+                                "color": "#E8CDD3"
+                            }
+                        },
+                        "radius": 6
+                    }
+                ]
+            }
+        }
+    }
+}
