@@ -1,0 +1,4 @@
+pandas
+google-genai
+python-dotenv
+crewai==1.15.35

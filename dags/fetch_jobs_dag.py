@@ -45,9 +45,21 @@ def fetch_jobs_daily():
 
         run()
 
+    @task
+    def match_jobs():
+        from src.match_jobs import run
+
+        run()
+
+    @task
+    def career_report():
+        from agents.career_crew import run
+
+        run()
+
     fetched = fetch_and_save()
     cleaned = clean()
-    fetched >> cleaned >> extract_skills() >> ai_enrich() >> export_data()
+    fetched >> cleaned >> extract_skills() >> ai_enrich() >> export_data() >> match_jobs() >> career_report()
 
 
 fetch_jobs_daily()
