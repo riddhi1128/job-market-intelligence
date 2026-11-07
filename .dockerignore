@@ -1,0 +1,7 @@
+venv/
+data/
+logs/
+.git/
+.env
+__pycache__/
+*.pbix
