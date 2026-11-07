@@ -55,6 +55,7 @@ The DAG `fetch_jobs_daily` runs seven tasks in order: fetch, clean, extract skil
 | AI | Google Gemini API, CrewAI |
 | API | FastAPI, Uvicorn |
 | Packaging | Docker, Docker Compose |
+| Cloud | AWS EC2, S3, IAM |
 | Dashboard | Power BI (DAX measures, slicers, custom theme) |
 
 ## API
@@ -116,9 +117,17 @@ docs/        Screenshots
 - The sources are mostly remote and European roles.
 - Airflow runs locally, so collection only happens while Docker is running.
 
+## Cloud deployment
+
+The API runs in a Docker container on an AWS EC2 server. The data files sit in a private S3 bucket, and the server reads them through a read-only IAM role.
+
+![API on AWS](docs/aws-api.png)
+
+Live demo: http://54.66.255.28:8000/docs (the address changes if the server is restarted, and it goes offline when the free AWS credits end).
+
 ## Roadmap
 
-- Deploy the pipeline and API to the cloud.
+- Upload fresh data to S3 automatically from Airflow, so the cloud API always shows the latest results.
 
 ## Data credit
 
